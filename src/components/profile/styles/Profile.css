@@ -1,0 +1,1201 @@
+/* Profile.css */
+:root {
+  --mubas-blue: #003A8F;
+  --mubas-blue-light: #2563eb;
+  --mubas-blue-dark: #002B6A;
+  --mubas-gold: #F4C430;
+  --bg-light: #F8FAFC;
+  --bg-lighter: #F1F5F9;
+  --white: #FFFFFF;
+  --text-primary: #1F2937;
+  --text-secondary: #6B7280;
+  --text-tertiary: #9CA3AF;
+  --success: #10B981;
+  --error: #EF4444;
+  --warning: #F59E0B;
+  --radius-xl: 32px;
+  --radius-lg: 20px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --radius-xs: 8px;
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+  --border-color: #E5E7EB;
+  --border-light: #F3F4F6;
+  --primary-gradient: linear-gradient(135deg, #2c3b53ff 0%, #242528ff 100%);
+  --gold-gradient: linear-gradient(135deg, #F4C430 0%, #FBBF24 100%);
+  --success-gradient: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-light);
+  min-height: 100vh;
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+.header-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+}
+
+.profile-avatar-large {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.avatar-edit-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--mubas-blue);
+  border: 2px solid var(--white);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.avatar-edit-btn:hover {
+  background: var(--mubas-blue-dark);
+  transform: scale(1.05);
+}
+
+.profile-info h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.profile-info p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.profile-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.stat {
+  text-align: center;
+  min-width: 70px;
+}
+
+.stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--mubas-blue);
+  line-height: 1.3;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  line-height: 1;
+}
+
+.btn i {
+  font-size: 16px;
+}
+
+.btn-primary {
+  background: var(--mubas-blue);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--mubas-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: var(--bg-lighter);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: var(--border-light);
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Profile Tabs */
+.profile-tabs {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.tabs-navigation {
+  display: flex;
+  gap: 4px;
+  padding: 16px 20px 0 20px;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--white);
+}
+
+.tab-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.tab-btn i {
+  font-size: 16px;
+}
+
+.tab-btn:hover {
+  color: var(--mubas-blue);
+  background: var(--bg-lighter);
+}
+
+.tab-btn.active {
+  color: var(--mubas-blue);
+  border-bottom-color: var(--mubas-blue);
+  background: var(--bg-light);
+}
+
+.tabs-content {
+  padding: 32px 28px;
+}
+
+/* Profile Tab Content */
+.profile-tab-content h3,
+.photos-tab-content h3,
+.preferences-tab-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.profile-tab-content h3:after,
+.photos-tab-content h3:after,
+.preferences-tab-content h3:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--mubas-gold);
+  border-radius: 4px;
+}
+
+.profile-bio-section {
+  margin-bottom: 32px;
+}
+
+.bio-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  background: var(--bg-lighter);
+  padding: 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 16px;
+  resize: vertical;
+  transition: border 0.2s;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--mubas-blue);
+  box-shadow: 0 0 0 3px rgba(0, 58, 143, 0.1);
+}
+
+.profile-details-section {
+  margin-bottom: 32px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detail-label {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-value {
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 500;
+  background: var(--bg-lighter);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  transition: all 0.2s;
+  background: white;
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--mubas-blue);
+  box-shadow: 0 0 0 3px rgba(0, 58, 143, 0.1);
+}
+
+.profile-interests-section {
+  margin-top: 20px;
+}
+
+.interests-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.interest-item {
+  background: var(--bg-lighter);
+  color: var(--text-primary);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 15px;
+  border: 1px solid var(--border-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s;
+}
+
+.interest-item:hover {
+  background: var(--border-light);
+  border-color: var(--border-color);
+}
+
+.remove-interest {
+  background: transparent;
+  border: none;
+  color: var(--text-tertiary);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.remove-interest:hover {
+  background: var(--error);
+  color: white;
+}
+
+.add-interest-btn {
+  background: transparent;
+  border: 2px dashed var(--border-color);
+  color: var(--text-secondary);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 15px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.add-interest-btn:hover {
+  border-color: var(--mubas-blue);
+  color: var(--mubas-blue);
+  background: var(--bg-lighter);
+}
+
+/* Photos Tab */
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.photo-item {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s;
+}
+
+.photo-item:hover {
+  transform: scale(1.02);
+}
+
+.photo-preview {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.primary-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--mubas-gold);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: var(--shadow-sm);
+  z-index: 2;
+}
+
+.primary-badge i {
+  font-size: 12px;
+}
+
+.photo-actions {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.photo-item:hover .photo-actions {
+  opacity: 1;
+}
+
+.photo-action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  color: var(--text-primary);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s;
+}
+
+.photo-action-btn:hover:not(:disabled) {
+  background: var(--mubas-blue);
+  color: white;
+}
+
+.photo-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.photo-item.add-photo {
+  background: var(--bg-lighter);
+  border: 2px dashed var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.photo-item.add-photo:hover {
+  border-color: var(--mubas-blue);
+  background: var(--bg-light);
+}
+
+.add-photo-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+}
+
+.add-photo-content i {
+  font-size: 28px;
+}
+
+.photos-info {
+  background: var(--bg-lighter);
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.photos-info i {
+  color: var(--mubas-blue);
+  font-size: 18px;
+}
+
+/* Preferences Tab */
+.preferences-section,
+.privacy-section {
+  background: var(--bg-lighter);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  border: 1px solid var(--border-light);
+}
+
+.preference-item {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.preference-item label {
+  min-width: 140px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.age-range-display,
+.distance-display {
+  background: white;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  font-size: 15px;
+}
+
+.looking-for-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gender-tag {
+  background: white;
+  padding: 6px 14px;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+.preference-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--mubas-blue);
+  margin-right: 8px;
+}
+
+.privacy-note {
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+/* Loading Component (optional, but included for consistency) */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+/* ========== SMALL SCREEN IMPROVEMENTS ========== */
+@media (max-width: 768px) {
+  .profile-header {
+    padding: 20px 18px;
+    margin-bottom: 20px;
+  }
+
+  .header-left {
+    gap: 16px;
+  }
+
+  .profile-stats {
+    gap: 16px;
+  }
+
+  .stat {
+    min-width: 60px;
+  }
+
+  .stat-value {
+    font-size: 20px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+
+  .tabs-navigation {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px 12px 0 12px;
+  }
+
+  .tab-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .tabs-content {
+    padding: 24px 18px;
+  }
+
+  .details-grid {
+    gap: 16px;
+  }
+
+  .detail-value {
+    padding: 8px 12px;
+    font-size: 15px;
+  }
+
+  .profile-bio-section {
+    margin-bottom: 24px;
+  }
+
+  .bio-text {
+    padding: 14px;
+  }
+
+  .interests-grid {
+    gap: 8px;
+  }
+
+  .interest-item {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+
+  .add-interest-btn {
+    padding: 6px 14px;
+  }
+
+  .photos-grid {
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .preferences-section,
+  .privacy-section {
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+
+  .preference-item {
+    margin-bottom: 14px;
+    gap: 8px;
+  }
+
+  .preference-item label {
+    min-width: 120px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-page {
+    padding: 12px 10px;
+  }
+
+  .profile-header {
+    padding: 16px 14px;
+  }
+
+  .profile-avatar-large {
+    width: 80px;
+    height: 80px;
+  }
+
+  .avatar-edit-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .profile-info h1 {
+    font-size: 22px;
+  }
+
+  .profile-info p {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .profile-stats {
+    gap: 12px;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .stat {
+    min-width: auto;
+    flex: 1;
+  }
+
+  .stat-value {
+    font-size: 18px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .btn {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .tabs-navigation {
+    gap: 2px;
+    padding: 8px 8px 0 8px;
+  }
+
+  .tab-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .tab-btn i {
+    font-size: 14px;
+  }
+
+  .tabs-content {
+    padding: 18px 12px;
+  }
+
+  .profile-tab-content h3,
+  .photos-tab-content h3,
+  .preferences-tab-content h3 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+  }
+
+  .profile-tab-content h3:after,
+  .photos-tab-content h3:after,
+  .preferences-tab-content h3:after {
+    width: 40px;
+    height: 2px;
+  }
+
+  .profile-bio-section {
+    margin-bottom: 20px;
+  }
+
+  .bio-text {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .form-textarea {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .profile-details-section {
+    margin-bottom: 20px;
+  }
+
+  .details-grid {
+    gap: 12px;
+  }
+
+  .detail-label {
+    font-size: 12px;
+  }
+
+  .detail-value {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .form-input,
+  .form-select {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .profile-interests-section {
+    margin-top: 12px;
+  }
+
+  .interests-grid {
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .interest-item {
+    padding: 4px 10px;
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .remove-interest {
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+  }
+
+  .add-interest-btn {
+    padding: 4px 10px;
+    font-size: 13px;
+  }
+
+  .photos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .primary-badge {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  .photo-actions {
+    gap: 4px;
+    bottom: 4px;
+    right: 4px;
+  }
+
+  .photo-action-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .photos-info {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .preferences-section,
+  .privacy-section {
+    padding: 14px;
+    margin-bottom: 14px;
+  }
+
+  .preference-item {
+    margin-bottom: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .preference-item label {
+    min-width: auto;
+    font-size: 13px;
+  }
+
+  .age-range-display,
+  .distance-display {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .gender-tag {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+
+  .privacy-note {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .profile-page {
+    padding: 8px 6px;
+  }
+
+  .profile-header {
+    padding: 12px 10px;
+  }
+
+  .profile-stats {
+    gap: 8px;
+  }
+
+  .stat-value {
+    font-size: 16px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .tabs-content {
+    padding: 14px 8px;
+  }
+
+  .details-grid {
+    gap: 8px;
+  }
+
+  .interest-item {
+    padding: 3px 8px;
+    font-size: 12px;
+  }
+
+  .add-interest-btn {
+    padding: 3px 8px;
+    font-size: 12px;
+  }
+}
+/* Icon-only buttons */
+.btn.icon-only {
+  padding: 10px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn.icon-only svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 480px) {
+  .btn.icon-only {
+    width: 38px;
+    height: 38px;
+    padding: 8px;
+  }
+  
+  .btn.icon-only svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+/* Ensure header actions are centered on small screens */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header-left {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header-actions {
+    justify-content: center !important;  /* override any right alignment */
+    gap: 8px;                            /* reduce gap between buttons */
+    margin-top: 16px;                     /* spacing from the info above */
+    width: 100%;                          /* take full width */
+  }
+
+  /* Optional: make the edit-actions container also centered */
+  .edit-actions {
+    justify-content: center;
+  }
+}
+/* Photo Viewer Modal */
+.photo-viewer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-viewer-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.photo-viewer-content img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.photo-viewer-close {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.photo-viewer-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 40px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  z-index: 1001;
+}
+
+.photo-viewer-nav:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.photo-viewer-nav.prev {
+  left: -60px;
+}
+
+.photo-viewer-nav.next {
+  right: -60px;
+}
+
+.photo-counter {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+/* Make photo items with real images clickable */
+.photo-item.clickable {
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .photo-viewer-nav {
+    font-size: 30px;
+    padding: 8px 12px;
+  }
+  .photo-viewer-nav.prev {
+    left: 10px;
+  }
+  .photo-viewer-nav.next {
+    right: 10px;
+  }
+  .photo-viewer-close {
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+  }
+  .photo-counter {
+    bottom: 10px;
+  }
+}
+/* Photos header with title and add button */
+.photos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.photos-header h3 {
+  margin-bottom: 0;
+}
+
+.photos-header .add-photo-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--mubas-blue);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.photos-header .add-photo-btn:hover {
+  background: var(--mubas-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Ensure the grid doesn't have extra spacing from removed tile */
+.photos-grid {
+  margin-bottom: 24px;
+}/* Eye icon for photo viewing hint */
+.photo-view-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 3;
+  
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Ensure action buttons appear above the eye icon */
+.photo-actions {
+  z-index: 4;
+}

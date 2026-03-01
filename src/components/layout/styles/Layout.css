@@ -1,0 +1,65 @@
+/* components/layout/styles/Layout.css */
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: var(--bg-light);
+    justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.main-content-area {
+  flex: 1;
+  overflow: auto;
+  padding: 0;
+}
+
+/* Mobile Sidebar */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 280px;
+  background: var(--white);
+  z-index: 2000;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-lg);
+}
+
+.mobile-sidebar.active {
+  transform: translateX(0);
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1999;
+  backdrop-filter: blur(4px);
+}
+
+/* Adjust for mobile bottom nav */
+@media (max-width: 768px) {
+  .main-content-area {
+    padding-bottom: 70px; /* Make room for bottom nav */
+  }
+}
+
+/* Adjust for desktop with sidebar */
+@media (min-width: 769px) {
+  .main-content-area {
+    padding-left: 280px; /* Make room for sidebar */
+  }
+}

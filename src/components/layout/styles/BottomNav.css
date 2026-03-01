@@ -1,0 +1,212 @@
+/* BottomNav.css – Modern, sleek bottom navigation with your design tokens */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: var(--white);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95); /* slightly transparent to blend with content */
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 12px;
+  z-index: 1000;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-top: 1px solid var(--border-light);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: var(--shadow-md);
+}
+
+.bottom-nav.hidden {
+  transform: translateY(100%);
+}
+
+.bottom-nav.visible {
+  transform: translateY(0);
+}
+
+/* Navigation Items */
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 8px 4px;
+  cursor: pointer;
+  color: var(--text-tertiary);
+  transition: all 0.2s ease;
+  position: relative;
+  min-width: 0; /* prevent flex overflow */
+  border-radius: var(--radius-sm);
+}
+
+.nav-item:focus-visible {
+  outline: 2px solid var(--mubas-blue-light);
+  outline-offset: 2px;
+}
+
+.nav-item.active {
+  color: var(--mubas-blue);
+  
+}
+
+.nav-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.nav-icon {
+  font-size: 24px;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.nav-item:hover .nav-icon {
+  transform: scale(1.1);
+}
+
+.nav-label {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 4px;
+  transition: color 0.2s;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Active indicator (small dot) */
+.active-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 5px;
+  border-radius: 2px;
+  background: var(--mubas-blue);
+  transition: all 0.2s;
+}
+
+/* Badge for unread counts */
+.nav-badge {
+  position: absolute;
+  top: -2px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 18px;
+  background: var(--error);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+  border: 2px solid var(--white);
+}
+
+/* Loading indicator (tiny spinner) */
+.nav-loading-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 58, 143, 0.2);
+  border-top-color: var(--mubas-blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Disable hover effects when busy */
+.nav-item:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: auto; /* still allow? better to disable */
+}
+
+/* Small screen adjustments */
+@media (max-width: 480px) {
+  .bottom-nav {
+    height: 64px;
+    padding: 0 8px;
+  }
+
+  .nav-icon {
+    font-size: 22px;
+  }
+
+  .nav-label {
+    font-size: 11px;
+  }
+
+  .nav-badge {
+    top: -4px;
+    right: -8px;
+    min-width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+}
+
+/* For very narrow devices, hide labels and only show icons */
+@media (max-width: 360px) {
+  .nav-label {
+    display: none;
+  }
+
+  .nav-item {
+    padding: 12px 0;
+  }
+
+  .active-indicator {
+    width: 20px;
+    bottom: 2px;
+  }
+}
+
+/* Safe area for notched phones */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .bottom-nav {
+    padding-bottom: env(safe-area-inset-bottom);
+    height: calc(70px + env(safe-area-inset-bottom));
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bottom-nav {
+    background: var(--white);
+    border-top: 2px solid var(--text-primary);
+  }
+
+  .nav-item.active {
+    color: var(--mubas-blue-dark);
+    font-weight: 700;
+  }
+
+  .active-indicator {
+    background: var(--mubas-blue-dark);
+  }
+}
