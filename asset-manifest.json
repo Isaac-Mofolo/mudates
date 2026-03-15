@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/mudates/static/css/main.cc167b52.css",
+    "main.js": "/mudates/static/js/main.271e1889.js",
+    "static/js/511.2e027d81.chunk.js": "/mudates/static/js/511.2e027d81.chunk.js",
+    "static/media/hero-couple.jpg": "/mudates/static/media/hero-couple.84c17db92a993d61c851.jpg",
+    "static/media/couple3.jpg": "/mudates/static/media/couple3.750302cf79bd02a45b5d.jpg",
+    "static/media/couple2.jpg": "/mudates/static/media/couple2.bb9d26168e2c0b796e63.jpg",
+    "static/media/couple4.jpg": "/mudates/static/media/couple4.86270673bc7b71a31045.jpg",
+    "index.html": "/mudates/index.html",
+    "main.cc167b52.css.map": "/mudates/static/css/main.cc167b52.css.map",
+    "main.271e1889.js.map": "/mudates/static/js/main.271e1889.js.map",
+    "511.2e027d81.chunk.js.map": "/mudates/static/js/511.2e027d81.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cc167b52.css",
+    "static/js/main.271e1889.js"
+  ]
+}
